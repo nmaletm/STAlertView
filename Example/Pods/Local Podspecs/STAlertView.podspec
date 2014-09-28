@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "STAlertView"
-  s.version          = "0.1.0"
+  s.version          = "0.0.1"
   s.summary          = "Wrapper of the native UIAlertView that work with blocks"
   s.description      = <<-DESC
     Do you like to use the UIAlertViewDelegate for each UIAlertView? Specially when there are more than one at the same view controller. With STAlertView, you will be able to define the behaviour of Yes/No with a block, at the same place you 
@@ -33,5 +33,4 @@ Pod::Spec.new do |s|
   s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-  s.compiler_flags = "-weak-lSystem"
 end
