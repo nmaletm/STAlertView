@@ -1,12 +1,11 @@
 # STAlertView
-[![CI Status](http://img.shields.io/travis/Nestor/STAlertView.svg?style=flat)](https://travis-ci.org/Nestor/STAlertView)
 [![Version](https://img.shields.io/cocoapods/v/STAlertView.svg?style=flat)](http://cocoadocs.org/docsets/STAlertView)
 [![License](https://img.shields.io/cocoapods/l/STAlertView.svg?style=flat)](http://cocoadocs.org/docsets/STAlertView)
 [![Platform](https://img.shields.io/cocoapods/p/STAlertView.svg?style=flat)](http://cocoadocs.org/docsets/STAlertView)
 
 The idea of this component is to improve the readability while using the native UIAlertView. It works with delegates, and it becomes a problem when you have two alerts at the same controller.
 
-With STAlertView you will be able to define the behaviour of the 'Ok' and 'Cancel' button, at the same place where you declare the alert view. So, lets see some code.
+With STAlertView you will be able to define the behaviour of the 'Ok' and 'Cancel' button, at the same place where you declare the alert view. So, let's see some code.
 
 ```Objective-C
 [[STAlertView alloc] initWithTitle:@"Title" 
@@ -69,7 +68,7 @@ self.alertView = [[STAlertView alloc] initWithTitle:@"Title of the alert"
 
 ## Author
 
-Nestor, nmaletm@gmail.com
+[Nestor Malet](http://nestor.cat) - [@NestorMalet](http://twitter.com/NestorMalet)
 
 ## License
 
