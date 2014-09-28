@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <STAlertView/STAlertView.h>
 
 @interface STViewController : UIViewController
+
+
+@property (nonatomic, strong) STAlertView *alertView;
 
 @end

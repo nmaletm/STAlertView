@@ -8,6 +8,7 @@
 
 #import "STViewController.h"
 
+
 @interface STViewController ()
 
 @end
@@ -18,6 +19,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
+    self.alertView = [[STAlertView alloc] initWithTitle:@"Super alert view" message:@"I'm a native UIAlertView. Do you think I'm useful?"
+             cancelButtonTitle:@"No, ofc" otherButtonTitles:@"Yes a little bit"
+             cancelButtonBlock:^{
+                 NSLog(@"Why do you think I'm not fancy :_( ");
+             } otherButtonBlock:^{
+                 NSLog(@"Great! Feel free to contribute or contact me @NestorMalet!");
+             }];
 }
 
 - (void)didReceiveMemoryWarning
