@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
     create the alert view. This will increase the readability of your code.
                        DESC
   s.homepage         = "https://github.com/nmaletm/STAlertView"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.screenshots      = "https://raw.githubusercontent.com/nmaletm/STAlertView/master/screenshot.png"
   s.license          = 'MIT'
   s.author           = { "Nestor Malet" => "nmaletm@gmail.com" }
   s.source           = { :git => "https://github.com/nmaletm/STAlertView.git", :tag => s.version.to_s }
