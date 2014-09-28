@@ -5,7 +5,7 @@
 
 The idea of this component is to improve the readability while using the native UIAlertView. The UIKit alert view works with delegates. When you have two or more alerts at the same controller, it becomes a problem because you have to use the TAG to identify from which UIAlertView comes the user.
 
-With STAlertView you will be able to define the behaviour of the 'Ok' and 'Cancel' button, at the same place where you declare the alert view. So, let's see some code:
+With STAlertView you will be able to define the behavior of the 'Ok' and 'Cancel' button, at the same place where you declare the alert view. So, let's see some code:
 
 ```Objective-C
 [[STAlertView alloc] initWithTitle:@"Title" 
