@@ -3,9 +3,9 @@
 [![License](https://img.shields.io/cocoapods/l/STAlertView.svg?style=flat)](http://cocoadocs.org/docsets/STAlertView)
 [![Platform](https://img.shields.io/cocoapods/p/STAlertView.svg?style=flat)](http://cocoadocs.org/docsets/STAlertView)
 
-The idea of this component is to improve the readability while using the native UIAlertView. It works with delegates, and it becomes a problem when you have two alerts at the same controller.
+The idea of this component is to improve the readability while using the native UIAlertView. The UIKit alert view works with delegates. When you have two or more alerts at the same controller, it becomes a problem because you have to use the TAG to identify from which UIAlertView comes the user.
 
-With STAlertView you will be able to define the behaviour of the 'Ok' and 'Cancel' button, at the same place where you declare the alert view. So, let's see some code.
+With STAlertView you will be able to define the behaviour of the 'Ok' and 'Cancel' button, at the same place where you declare the alert view. So, let's see some code:
 
 ```Objective-C
 [[STAlertView alloc] initWithTitle:@"Title" 
@@ -20,6 +20,9 @@ With STAlertView you will be able to define the behaviour of the 'Ok' and 'Cance
             
         }];
 ```
+And that's it, no pieces of code everywhere, just a few lines and all the related code together. As it is a native UIAlertView, the result of using STAlertView is like the native one:
+
+![Screenshot](screenshot.png "STAlertView example")
 
 This component has been made thanks to [the answer](http://stackoverflow.com/a/10243357) of [Ricky Helgesson](http://stackoverflow.com/users/947853/ricky-helgesson) at StackOverflow.
 
