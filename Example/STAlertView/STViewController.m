@@ -19,15 +19,39 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    
-    self.alertView = [[STAlertView alloc] initWithTitle:@"Super alert view" message:@"I'm a native UIAlertView. Do you think I'm useful?"
-             cancelButtonTitle:@"No, ofc" otherButtonTitles:@"Yes a little bit"
-             cancelButtonBlock:^{
-                 NSLog(@"Why do you think I'm not fancy :_( ");
-             } otherButtonBlock:^{
-                 NSLog(@"Great! Feel free to contribute or contact me @NestorMalet!");
-             }];
+
+}
+
+
+- (IBAction)showNormalUIAlertView:(id)sender
+{
+    self.stAlertView = [[STAlertView alloc] initWithTitle:@"Super alert view"
+                                                message:@"I'm a native UIAlertView. Do you think I'm useful?"
+                                      cancelButtonTitle:@"No, ofc"
+                                      otherButtonTitles:@"Yes a little bit"
+                      
+                                      cancelButtonBlock:^{
+                                          NSLog(@"Why do you think I'm not fancy :_( ");
+                                      } otherButtonBlock:^{
+                                          NSLog(@"Great! Feel free to contribute or contact me at twitter @NestorMalet!");
+                                      }];
+}
+
+
+- (IBAction)showTextFieldUIAlertView:(id)sender
+{
+    self.stAlertView = [[STAlertView alloc] initWithTitle:@"Alert view with a textfield"
+                                                message:@"I'm a native UIAlertView with a textfiled."
+                                          textFieldHint:@"What do you think about me?"
+                                         textFieldValue:nil
+                                      cancelButtonTitle:@"Cancel"
+                                      otherButtonTitles:@"Store"
+                      
+                                      cancelButtonBlock:^{
+                                          NSLog(@"Please, give me some feedback!");
+                                      } otherButtonBlock:^(NSString * result){
+                                          NSLog(@" You have said %@, but I can't store it :( . If you want, you can send it to me at hello@nestor.cat or via twitter @NestorMalet!", result);
+                                      }];
 }
 
 - (void)didReceiveMemoryWarning
