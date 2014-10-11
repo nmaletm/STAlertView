@@ -8,35 +8,83 @@
 
 #import "STAlertView.h"
 
-@implementation STAlertView
 
-- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+typedef enum {
+    STAlertViewTypeNormal,
+    STAlertViewTypeTextField
+} STAlertViewType;
+
+@implementation STAlertView{
+    STAlertViewBlock cancelButtonBlock;
+    STAlertViewBlock otherButtonBlock;
+    
+    STAlertViewStringBlock textFieldBlock;
+}
+
+@synthesize alertView;
+
+
+- (void) alertView:(UIAlertView *)theAlertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 0 && self.cancelButtonBlock)
-        self.cancelButtonBlock();
-    else if (buttonIndex == 1 && self.otherButtonBlock)
-        self.otherButtonBlock();
+    if (buttonIndex == 0 && cancelButtonBlock)
+        cancelButtonBlock();
+    else if (buttonIndex == 1 && theAlertView.tag == STAlertViewTypeNormal && otherButtonBlock)
+        otherButtonBlock();
+    else if (buttonIndex == 1 && theAlertView.tag == STAlertViewTypeTextField && textFieldBlock)
+        textFieldBlock([alertView textFieldAtIndex:0].text);
     
 }
 
-- (void) alertViewCancel:(UIAlertView *)alertView
+- (void) alertViewCancel:(UIAlertView *)theAlertView
 {
-    if (self.cancelButtonBlock)
-        self.cancelButtonBlock();
+    if (cancelButtonBlock)
+        cancelButtonBlock();
 }
 
-- (id) initWithTitle:(NSString*)title message:(NSString*)message
-     cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles
-     cancelButtonBlock:(STAlertViewBlock)theCancelButtonBlock otherButtonBlock:(STAlertViewBlock)theOtherButtonBlock
+- (id) initWithTitle:(NSString*)title
+             message:(NSString*)message
+   cancelButtonTitle:(NSString *)cancelButtonTitle
+   otherButtonTitles:(NSString *)otherButtonTitles
+   cancelButtonBlock:(STAlertViewBlock)theCancelButtonBlock
+    otherButtonBlock:(STAlertViewBlock)theOtherButtonBlock
 {
 
-    self.cancelButtonBlock = [theCancelButtonBlock copy];
-    self.otherButtonBlock = [theOtherButtonBlock copy];
+    cancelButtonBlock = [theCancelButtonBlock copy];
+    otherButtonBlock = [theOtherButtonBlock copy];
     
-    [[[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles, nil] show];
+    alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles, nil];
+    alertView.tag = STAlertViewTypeNormal;
+    
+    [alertView show];
     
     return self;
 }
+
+- (id) initWithTitle:(NSString*)title
+             message:(NSString*)message
+       textFieldHint:(NSString*)textFieldMessage
+      textFieldValue:(NSString *)texttFieldValue
+   cancelButtonTitle:(NSString *)cancelButtonTitle
+   otherButtonTitles:(NSString *)otherButtonTitles
+   cancelButtonBlock:(STAlertViewBlock)theCancelButtonBlock
+    otherButtonBlock:(STAlertViewStringBlock)theOtherButtonBlock
+{
+    
+    cancelButtonBlock = [theCancelButtonBlock copy];
+    textFieldBlock = [theOtherButtonBlock copy];
+    
+    alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles, nil];
+    alertView.tag = STAlertViewTypeTextField;
+
+    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [[alertView textFieldAtIndex:0] setPlaceholder:textFieldMessage];
+    [[alertView textFieldAtIndex:0] setText:texttFieldValue];
+    
+    [alertView show];
+    
+    return self;
+}
+
 
 
 @end

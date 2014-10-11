@@ -12,6 +12,10 @@
 @interface STViewController : UIViewController
 
 
-@property (nonatomic, strong) STAlertView *alertView;
+@property (nonatomic, strong) STAlertView *stAlertView;
+
+
+- (IBAction)showNormalUIAlertView:(id)sender;
+- (IBAction)showTextFieldUIAlertView:(id)sender;
 
 @end
