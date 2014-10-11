@@ -22,7 +22,7 @@ With STAlertView you will be able to define the behavior of the 'Ok' and 'Cancel
 ```
 And that's it, no pieces of code everywhere, just a few lines and all the related code together. As it is a native UIAlertView, the result of using STAlertView is like the native one:
 
-![Screenshot](screenshot.png "STAlertView example")
+![Screenshot](Screenshots/screenshot.png "STAlertView example")
 
 This component has been made thanks to [the answer](http://stackoverflow.com/a/10243357) of [Ricky Helgesson](http://stackoverflow.com/users/947853/ricky-helgesson) at StackOverflow.
 
