@@ -81,7 +81,7 @@ STAlertView is available under the MIT license. See the LICENSE file for more in
 
 Support this project via gittip.
 
-<a href="https://gratipay.com/nmaletm/">
+<a href="https://gratipay.com/nmaletm/" target="_blank">
   <img alt="Support via Gratipay" src="https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png"/>
 </a>
 
