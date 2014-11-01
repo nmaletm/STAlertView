@@ -8,7 +8,7 @@ The idea of this component is to improve the readability while using the native 
 With STAlertView you will be able to define the behavior of the 'Ok' and 'Cancel' button, at the same place where you declare the alert view. So, let's see some code:
 
 ```Objective-C
-[[STAlertView alloc] initWithTitle:@"Title" 
+[[[STAlertView alloc] initWithTitle:@"Title" 
         message:@"Message"
         cancelButtonTitle:@"Cancel"
         otherButtonTitle:@"Ok"
@@ -18,7 +18,7 @@ With STAlertView you will be able to define the behavior of the 'Ok' and 'Cancel
         } otherButtonBlock:^{
             NSLog(@"do something at ok");
             
-        }];
+        }] show];
 ```
 And that's it, no pieces of code everywhere, just a few lines and all the related code together. As it is a native UIAlertView, the result of using STAlertView is like the native one:
 
@@ -67,6 +67,7 @@ self.alertView = [[STAlertView alloc] initWithTitle:@"Title of the alert"
             // Code todo when the user accept
             ...
         }];
+[self.alertView show]
 ...
 ```
 
