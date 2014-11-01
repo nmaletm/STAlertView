@@ -21,6 +21,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		6C7390111A04F50C001FC2F6 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 6C7390101A04F50C001FC2F6 /* CHANGELOG.md */; };
 		AAB68AFA0D646423CEA66100 /* libPods-STAlertView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAB4445719EF376144F194E /* libPods-STAlertView.a */; };
 		BB575652743D4D2976C574BA /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40316767254338E3BD2C4EF5 /* libPods-Tests.a */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		677CE44C45E4B6F93DD8C568 /* Pods-STAlertView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STAlertView.release.xcconfig"; path = "Pods/Target Support Files/Pods-STAlertView/Pods-STAlertView.release.xcconfig"; sourceTree = "<group>"; };
+		6C7390101A04F50C001FC2F6 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		8EAB4445719EF376144F194E /* libPods-STAlertView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-STAlertView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9698E2D78EEE09AFC3B293B1 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C04B932517064CDF585F8D0D /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				6C7390101A04F50C001FC2F6 /* CHANGELOG.md */,
 				03C6FD3A37061FE0CD9777DA /* STAlertView.podspec */,
 				F58729E7EFC786C0B7740DAC /* README.md */,
 				CB6CBFF82E5368ABBC1A7C58 /* LICENSE */,
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				6C7390111A04F50C001FC2F6 /* CHANGELOG.md in Resources */,
 				6003F5A1195388D20070C39A /* Main.storyboard in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);

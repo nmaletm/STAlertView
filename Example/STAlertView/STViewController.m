@@ -25,16 +25,16 @@
 
 - (IBAction)showNormalUIAlertView:(id)sender
 {
-    self.stAlertView = [[STAlertView alloc] initWithTitle:@"Super alert view"
+    self.stAlertView = [[[STAlertView alloc] initWithTitle:@"Super alert view"
                                                 message:@"I'm a native UIAlertView. Do you think I'm useful?"
                                       cancelButtonTitle:@"No, ofc"
-                                      otherButtonTitles:@"Yes a little bit"
+                                       otherButtonTitle:@"Yes a little bit"
                       
                                       cancelButtonBlock:^{
                                           NSLog(@"Why do you think I'm not fancy :_( ");
                                       } otherButtonBlock:^{
                                           NSLog(@"Great! Feel free to contribute or contact me at twitter @NestorMalet!");
-                                      }];
+                                      }] show];
 }
 
 
@@ -45,13 +45,19 @@
                                           textFieldHint:@"What do you think about me?"
                                          textFieldValue:nil
                                       cancelButtonTitle:@"Cancel"
-                                      otherButtonTitles:@"Store"
+                                       otherButtonTitle:@"Store"
                       
                                       cancelButtonBlock:^{
                                           NSLog(@"Please, give me some feedback!");
                                       } otherButtonBlock:^(NSString * result){
                                           NSLog(@" You have said %@, but I can't store it :( . If you want, you can send it to me at hello@nestor.cat or via twitter @NestorMalet!", result);
                                       }];
+    
+    //You can make any customization to the native UIAlertView
+    self.stAlertView.alertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    [[self.stAlertView.alertView textFieldAtIndex:1] setKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
+
+    [self.stAlertView show];
 }
 
 - (void)didReceiveMemoryWarning

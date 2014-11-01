@@ -24,7 +24,7 @@ Show a native UIAlertView with two buttons. The text and the title is custom, an
  @param title Title of the UIAlertView
  @param message Message of the UIAlertView
  @param cancelButtonTitle Text of the second button
- @param otherButtonTitles Text of the first button
+ @param otherButtonTitle Text of the first button
  @param cancelButtonBlock Code to run if the user tap at the second button
  @param otherButtonBlock Code to run if the user tap at the first button
  @return The reference to the STAlertView
@@ -33,7 +33,7 @@ Show a native UIAlertView with two buttons. The text and the title is custom, an
 - (id) initWithTitle:(NSString *)title
              message:(NSString *)message
    cancelButtonTitle:(NSString *)cancelButtonTitle
-   otherButtonTitles:(NSString *)otherButtonTitles
+    otherButtonTitle:(NSString *)otherButtonTitle
    cancelButtonBlock:(STAlertViewBlock)cancelButtonBlock
     otherButtonBlock:(STAlertViewBlock)otherButtonBlock;
 
@@ -45,7 +45,7 @@ Show a native UIAlertView with two buttons. The text and the title is custom, an
  @param textFieldHint Text of the placeholder
  @param textFieldValue Initial text of the UITextField
  @param cancelButtonTitle Text of the second button
- @param otherButtonTitles Text of the first button
+ @param otherButtonTitle Text of the first button
  @param cancelButtonBlock Code to run if the user tap at the second button
  @param otherButtonBlock Code to run if the user tap at the first button
  @return The reference to the STAlertView
@@ -55,8 +55,14 @@ Show a native UIAlertView with two buttons. The text and the title is custom, an
        textFieldHint:(NSString *)textFieldMessage
       textFieldValue:(NSString *)texttFieldValue
    cancelButtonTitle:(NSString *)cancelButtonTitle
-   otherButtonTitles:(NSString *)otherButtonTitles
+    otherButtonTitle:(NSString *)otherButtonTitle
    cancelButtonBlock:(STAlertViewBlock)cancelButtonBlock
     otherButtonBlock:(STAlertViewStringBlock)otherButtonBlock;
+
+
+/**
+ Show the alertview
+ */
+- (id) show;
 
 @end

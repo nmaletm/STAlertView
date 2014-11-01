@@ -11,7 +11,7 @@ With STAlertView you will be able to define the behavior of the 'Ok' and 'Cancel
 [[STAlertView alloc] initWithTitle:@"Title" 
         message:@"Message"
         cancelButtonTitle:@"Cancel"
-        otherButtonTitles:@"Ok"
+        otherButtonTitle:@"Ok"
         cancelButtonBlock:^{
             NSLog(@"do something at cancel");
             
@@ -58,7 +58,8 @@ And at the .m:
 ...
 self.alertView = [[STAlertView alloc] initWithTitle:@"Title of the alert" 
         message:@"Message you want to show"
-        cancelButtonTitle:@"No" otherButtonTitles:@"Yes"
+        cancelButtonTitle:@"No" 
+         otherButtonTitle:@"Yes"
         cancelButtonBlock:^{
             // Code todo when the user cancel
             ...
@@ -69,6 +70,28 @@ self.alertView = [[STAlertView alloc] initWithTitle:@"Title of the alert"
 ...
 ```
 
+You can make any customization to the UIAlertView, using the reference of the alertview. For example:
+
+```objective-c
+    self.stAlertView = [[STAlertView alloc] initWithTitle:@"Alert view with a textfield"
+        message:@"Native UIAlertView with a textfiled."
+        textFieldHint:@"Write something"
+        textFieldValue:nil
+        cancelButtonTitle:@"Cancel"
+        otherButtonTitle:@"Store"
+
+        cancelButtonBlock:^{
+            ...
+        } otherButtonBlock:^(NSString * result){
+            ...
+        }];
+
+    //You can make any customization to the native UIAlertView
+    self.stAlertView.alertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    [[self.stAlertView.alertView textFieldAtIndex:1] setKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
+
+    [self.stAlertView show];
+```
 ## Author
 
 [Nestor Malet](http://nestor.cat) - [@NestorMalet](http://twitter.com/NestorMalet)

@@ -44,7 +44,7 @@ typedef enum {
 - (id) initWithTitle:(NSString*)title
              message:(NSString*)message
    cancelButtonTitle:(NSString *)cancelButtonTitle
-   otherButtonTitles:(NSString *)otherButtonTitles
+    otherButtonTitle:(NSString *)otherButtonTitle
    cancelButtonBlock:(STAlertViewBlock)theCancelButtonBlock
     otherButtonBlock:(STAlertViewBlock)theOtherButtonBlock
 {
@@ -52,10 +52,8 @@ typedef enum {
     cancelButtonBlock = [theCancelButtonBlock copy];
     otherButtonBlock = [theOtherButtonBlock copy];
     
-    alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles, nil];
+    alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitle, nil];
     alertView.tag = STAlertViewTypeNormal;
-    
-    [alertView show];
     
     return self;
 }
@@ -63,9 +61,9 @@ typedef enum {
 - (id) initWithTitle:(NSString*)title
              message:(NSString*)message
        textFieldHint:(NSString*)textFieldMessage
-      textFieldValue:(NSString *)texttFieldValue
+      textFieldValue:(NSString *)textFieldValue
    cancelButtonTitle:(NSString *)cancelButtonTitle
-   otherButtonTitles:(NSString *)otherButtonTitles
+    otherButtonTitle:(NSString *)otherButtonTitle
    cancelButtonBlock:(STAlertViewBlock)theCancelButtonBlock
     otherButtonBlock:(STAlertViewStringBlock)theOtherButtonBlock
 {
@@ -73,18 +71,22 @@ typedef enum {
     cancelButtonBlock = [theCancelButtonBlock copy];
     textFieldBlock = [theOtherButtonBlock copy];
     
-    alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles, nil];
+    alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitle, nil];
     alertView.tag = STAlertViewTypeTextField;
 
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     [[alertView textFieldAtIndex:0] setPlaceholder:textFieldMessage];
-    [[alertView textFieldAtIndex:0] setText:texttFieldValue];
+    [[alertView textFieldAtIndex:0] setText:textFieldValue];
     
-    [alertView show];
     
     return self;
 }
 
+- (id) show
+{
+    [alertView show];
+    return self;
+}
 
 
 @end
